@@ -1,0 +1,245 @@
+body{
+    margin : 0px ;
+    padding :0px ;
+    font-family: 'Noto Sans KR', sans-serif;
+    position :relative ;
+    background-color: rgba(7, 6, 6, 0.86);
+    box-sizing : border-box; 
+    }
+
+.head {
+       position :fixed ;
+       width :100% ;
+       z-index :10 ; 
+   //    background-color:  rgba(7, 6, 6, 1);
+       background-color:  rgb(41 41 41 / 86%);
+}
+    
+h1{
+    padding: 0px;
+    margin: 0px;
+    color :#2b17fb;
+    }
+
+h2{
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px ;
+    color :#ced620;
+    }
+.contact-wrapper h2{
+    color :#e60909;
+}    
+
+.cart{
+    visibility: hidden;
+    position : absolute ;
+   
+    top : -3px;
+    left: 108px;
+    width : 5% ;
+    height : 90% ;
+    cursor: pointer;
+  
+}
+.kicks-wrapper{
+    height:100%;
+    width:100% ;
+    margin : 0px ;
+    padding : 0px ;
+    text-align: center; 
+    }
+ 
+
+.nav-bar {
+    position :relative ;
+ //   top : 50px ;
+    display :flex ;
+    justify-content: space-between;
+    z-index :10 ;
+    display: flex;
+    padding :0px 10px 0px 10px ;
+     } 
+
+
+.contact-wrapper:hover .contact-details{
+    cursor: pointer;
+    transition : 0.5s ;
+    color : #ca0202 ;
+    visibility: visible;
+    }
+
+.order-wrapper {
+    position :relative ;
+    }
+
+.order-list{
+    position : absolute;
+    color : #ca0202 ;
+    justify-content : center ;
+    width : 85px;
+    max-height : 400px;
+    overflow: auto ;
+    align-items : center;
+    font-size :15px ;
+    visibility: hidden;
+    background-color:  rgba(7, 6, 6, .94);
+  //   background-color:  rgb(41 41 41 / 86%);
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    /* Position the tooltip */
+    left :0px ; 
+    z-index: 1; 
+}
+
+#refresh-image{
+    display :inline-block ;
+    position :relative ;
+    top: 10px;
+
+}
+.order-list img{
+    padding : 0px 10px 10px ;
+    display :block;
+   
+}
+
+.contact-wrapper: {
+    position :relative ;
+    }
+
+.add-to-order{
+    font-size :15px ;
+    visibility: hidden;
+    width: 220px;
+    background-color:  rgba(7, 6, 6, 0.90);
+    text-align: left;
+    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    /* Position the tooltip */
+    position: absolute ;
+    left :-10px ; 
+    z-index: 1; 
+}
+
+.add-to-order img{
+    font-size :15px ;
+    visibility: hidden;
+    width: 220px;
+    background-color:  rgba(7, 6, 6, 0.90);
+    text-align: left;
+    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    /* Position the tooltip */
+    position: relative ;
+    left :-10px ; 
+    z-index: 1; 
+}
+
+.order-wrapper:hover .add-to-order{
+    cursor: pointer;
+    transition : 0.5s ;
+    color : #ca0202 ;
+    visibility: visible;
+    }
+
+.contact-details {
+    font-size :15px ;
+    visibility: hidden;
+    width: 220px;
+    background-color:  rgba(7, 6, 6, 0.90);
+    text-align: left;
+    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    /* Position the tooltip */
+    position: absolute ;
+    left :0px ; 
+    z-index: 1;
+ }
+
+.rbs-wrapper:hover .rbs-details{
+    cursor: pointer;
+    transition : 0.5s ;
+    color : #ca0202 ;
+    visibility: visible;
+    }
+
+.rbs-wrapper{
+    position : relative ;
+    }
+
+.rbs-wrapper img{
+    position : relative ;
+    top:-2px;
+    left: 45px;
+    width : 50% ;
+    height : 65% ;
+    cursor: pointer;
+    }
+
+.rbs-details {
+    font-size :15px ;
+    visibility: hidden;
+    width: 220px;
+    background-color:  rgba(7, 6, 6, 0.90);
+    text-align: left;
+    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    /* Position the tooltip */
+    position: absolute ;
+    top: 23px ;
+    left :-110px ; 
+    z-index: 1;
+    } 
+
+.email-wrapper{
+    display :flex ;
+    }
+
+.email-wrapper img{
+    position : relative ;
+    top:-2px;
+    left: 0px;
+    width : 10% ;
+    cursor: pointer;
+    }
+
+
+.gallery {
+    Position :relative ;
+    top : 80px ;
+    heigh: 100vh ;
+    box-sizing: border-box ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    }
+
+
+.check-box{
+    visibility: hidden;
+    position : absolute;
+    padding :inherit ;
+    
+}
+.gallery-item {
+    position: relative ; 
+    }
+
+
+.gallery-item img {
+    width : 100% ;
+    height : 100% ;
+    display: block;
+    object-fit: cover ;
+    transition: 1s ;
+    }
+
+.hover:hover {  
+    transform: scale(1.05) ;
+    display: block;
+    object-fit: cover ;
+    transition: 1s ;
+    }
+
