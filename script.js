@@ -1,24 +1,53 @@
 //var addItems = document.querySelector("#add-items");
-var navBar = document.querySelector("#nav-bar");
+var navBar = document.querySelector("#header-id");
 var gallery = document.querySelector(".gallery");
 
 navBar.addEventListener("click",check,false);
 
 gallery.addEventListener("click",check,false);
 
+
+window.onload = function() {
+  // find the element that you want to drag.
+  var box = document.getElementById('order-list');
+   /* listen to the touchmove event,
+  every time it fires, grab the location
+  of touch and assign it to box */
+   box.addEventListener('touchmove', function(e) {
+    // grab the location of touch
+    var touchLocation = e.targetTouches[0];
+    // assign box new coordinates based on the touch.
+    box.style.left = touchLocation.pageX + 'px';
+    box.style.top = touchLocation.pageY + 'px';
+  })
+  /* record the position of the touch
+  when released using touchend event.
+  This will be the drop position. */
+  box.addEventListener('touchend', function(e) {
+    // current box position.
+    var x = parseInt(box.style.left);
+    var y = parseInt(box.style.top);
+  })
+}
+
+
+
+
+
+
 function check(e){
   if (e.target !== e.currentTarget) {
-    var clickedTarget = e.target.id ;
-    if (clickedTarget === "add-to-order" ) {  
+    var clickedTarget = e.target.className ;
+    if (clickedTarget === "add-to-cart" ) {  
         add(e) ;
     }
 
-    if (clickedTarget === "order-header" && document.getElementById("order-header").innerText === "VIEW ORDER")  {
+    if (clickedTarget === "review-cart")  {
         createOrderList(e) ;
     
     }
 
-    if (clickedTarget === "image" && document.getElementById("order-header").innerText === "VIEW ORDER") {  
+    if (clickedTarget === "image" ) {  
    //    alert ("Gallery item selected") ; 
        e.target.previousElementSibling.checked = true ;
 
@@ -52,7 +81,7 @@ function createOrderList(e) {
    let refresh = document.createElement("img");
    refresh.src = "images/refresh.png";
  //   image.style.visibility = "visible" ;    
-   refresh.style.width  = "12px" ;             
+   refresh.style.width  = "10px" ;             
    refresh.id = "refresh-image" ;
    
    document.getElementById("order-list").innerText = " "+k+" items";
@@ -64,7 +93,7 @@ function createOrderList(e) {
     let image = document.createElement("img");
     image.src = orderList[j].src ;
  //   image.style.visibility = "visible" ;       
-    image.style.width  = "50px" ;             
+    image.style.width  = "40px" ;             
     document.getElementById("order-list").appendChild(image); 
   }
   
@@ -77,10 +106,10 @@ function add(e){
 
 
     
-    alert ("Select items - add to cart") ;
-    document.querySelector("#add-to-order").style.visibility = "hidden";    
-    document.querySelector(".cart").style.visibility = "visible";
-    document.getElementById("order-header").innerText = "VIEW ORDER";
+ //   alert ("Select items - add to cart") ;
+//   document.querySelector("#menu").style.visibility = "hidden";    
+ //   document.querySelector(".cart").style.visibility = "visible";
+ //   document.getElementById("order-header").innerText = "VIEW ORDER";
   //  different ways to select the Dom
     // example 1 returns an object HTMLCollection of class class-box
     let checkElements = document.getElementsByClassName("check-box");
@@ -113,7 +142,7 @@ function add(e){
    // returns the first element of class check-box and assigns to checkElement
     let checkElement = document.querySelector(".check-box");
    // another exampl
-    let extraElements = document.getElementById("kicks-id");
+    let extraElements = document.getElementById("header-id");
  
       
 
@@ -177,4 +206,4 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-} 
+}  
