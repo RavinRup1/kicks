@@ -38,14 +38,37 @@ window.onload = function() {
 function check(e){
   if (e.target !== e.currentTarget) {
     var clickedTarget = e.target.className ;
+     if (clickedTarget === "bars-icon" ) {  
+          if (document.getElementById("menu").style.visibility == "hidden"){
+            document.getElementById("menu").style.visibility = "visible"
+          }
+     }
+
+
+    if (clickedTarget === "refresh-image" ) {  
+       // document.getElementById("menu").style.visibility = "hidden";
+       createOrderList(e) ;
+    }
+
+
+
     if (clickedTarget === "add-to-cart" ) {  
+        document.getElementById("menu").style.visibility = "hidden";
         add(e) ;
     }
 
     if (clickedTarget === "review-cart")  {
+        document.getElementById("menu").style.visibility = "hidden";  
         createOrderList(e) ;
     
     }
+
+    if (clickedTarget === "check-out" ) {  
+        document.getElementById("menu").style.visibility = "hidden";
+         document.getElementById("order-list").style.visibility = "hidden";
+  //      sendOrderLis(e) ;
+    }
+
 
     if (clickedTarget === "image" ) {  
    //    alert ("Gallery item selected") ; 
@@ -54,6 +77,13 @@ function check(e){
     }
   }  
 }
+
+
+function sendOrderList (){
+
+}
+
+
 
 
 function createOrderList(e) {
@@ -81,12 +111,14 @@ function createOrderList(e) {
    let refresh = document.createElement("img");
    refresh.src = "images/refresh.png";
  //   image.style.visibility = "visible" ;    
-   refresh.style.width  = "10px" ;             
-   refresh.id = "refresh-image" ;
+   refresh.style.width  = "10px" ;  
+   refresh.style.height  = "10px" ;              
+   refresh.className = "refresh-image" ;
    
-   document.getElementById("order-list").innerText = " "+k+" items";
+  
+  
+   document.getElementById("order-list").innerText = "  "+k+" items  ";
    document.getElementById("order-list").appendChild(refresh); 
-
    console.log(document.getElementById('order-list'));
 
   for ( let j = 0; j < k; j++ ){
@@ -97,7 +129,7 @@ function createOrderList(e) {
     document.getElementById("order-list").appendChild(image); 
   }
   
- //   document.getElementById("add-to-order > img").style.visibility = "visible" ;
+    document.getElementById("order-list").style.visibility = "visible" ;
 }
 
 function add(e){

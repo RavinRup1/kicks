@@ -3,7 +3,7 @@ body{
     padding :0px ;
     font-family: 'Noto Sans KR', sans-serif;
     position :relative ;
- //   background-color: rgb(23 21 21 / 86%);
+    background-color: rgb(23 21 21 / 86%);
     box-sizing : border-box; 
 }
     
@@ -25,8 +25,10 @@ h1{
     height :20px ;
 }
 .menu{
+    color : #ca0202 ;
     position : absolute;
-    width : 300px;
+    justify-content :left;
+    width : 200px;
     max-height : 400px;
     overflow: auto ;
     font-size :13px ;
@@ -34,6 +36,7 @@ h1{
     background-color:  rgb(15 14 14 / 94%);
     border-radius: 6px;
     padding: 3px 3px 3px 3px;
+    
     /* Position the tooltip */
     left :-5px ; 
     z-index: 1; 
@@ -41,13 +44,9 @@ h1{
 }
 .menu-wrapper:hover .menu{
     cursor: pointer;
-    transition : 0.5s ;
-    color : #ca0202 ;
+ //   color : #ca0202 ;
+  //  transition : 0.5s ;
     visibility: visible;
-}
-
-.add-to-car{
-      left : -10px ;
 }
 
 .order-wrapper {
@@ -57,8 +56,8 @@ h1{
 .order-list{
     position : absolute;
     color : #ca0202;
-    justify-content : center;
-    width: 85px;
+    justify-content: center;
+    width: 110px;
     max-height: 200px;
     overflow: auto;
     align-items : center;
@@ -74,16 +73,16 @@ h1{
     z-index: 1;
 }
 
-#refresh-image{
+.refresh-image{
     display :inline-block ;
     position :relative ;
-    top: 10px;
+
 
 }
 .order-list img{
-    padding : 0px 10px 10px ;
-    display :block;
-   
+    padding : 5px 10px 2px 5px ;
+    
+    
 }
 
 .contact-wrapper: {
