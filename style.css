@@ -7,39 +7,47 @@ body{
     box-sizing : border-box; 
 }
     
+
+.header-bar{
+    display : flex;
+    position : fixed;
+    width :100% ;
+    justify-content : space-between;
+    align-items : center ;
+    margin : 0px ;
+  //  padding : 0px 0px 0px 0px ;
+    background-color : #fff ;
+    text-align: center; 
+    z-index : 10 ;
+}
+.header-bar img{
+    width :30px ;
+    height :20px ;
+    padding : 20px 10px 0px 10px ;
+}
 h1{
     padding : 0px;
     margin : 0px;
     color :#2b17fb;
 }
-.header-bar{
-    display : flex;
-    justify-content : space-between;
-    align-items : center ;
-    margin : 0px ;
-    padding : 0px 10px 0px 10px ;
-    text-align: center; 
-}
-.header-bar img{
-    width :30px ;
-    height :20px ;
-}
 .menu{
-    color : #ca0202 ;
+    visibility: hidden;
+    color : rgba(7, 6, 6, .94) ;
     position : absolute;
-    justify-content :left;
-    width : 200px;
-    max-height : 400px;
+    width : 180px;
+ //   max-height : 400px;
     overflow: auto ;
     font-size :13px ;
-    visibility: hidden;
-    background-color:  rgb(15 14 14 / 94%);
+    
+    text-align: left;
+    background-color:  #fff;
     border-radius: 6px;
     padding: 3px 3px 3px 3px;
     
     /* Position the tooltip */
-    left :-5px ; 
-    z-index: 1; 
+    left :-2px ; 
+    top : 42px;
+    z-index: 10; 
 
 }
 .menu-wrapper:hover .menu{
@@ -49,13 +57,22 @@ h1{
     visibility: visible;
 }
 
+.add-to-cart{
+    border : solid 1px #a98b8beb;
+}
+.review-cart{
+    border-right : solid 1px #a98b8beb;
+    border-left : solid 1px #a98b8beb;
+}
+.check-out{
+    border : solid 1px #a98b8beb;
+}
 .order-wrapper {
     position :relative ;
-    }
-
+}
 .order-list{
     position : absolute;
-    color : #ca0202;
+    color : rgba(7, 6, 6, .94);
     justify-content: center;
     width: 110px;
     max-height: 200px;
@@ -63,31 +80,28 @@ h1{
     align-items : center;
     font-size :15px;
     visibility: hidden;
-    background-color:  rgba(7, 6, 6, .94);
+    background-color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 3px 3px 3px 3px;
     /* Position the tooltip */
     top : 50px;
     left :10px;
-    z-index: 1;
+  //  z-index: 1;
 }
 
 .refresh-image{
     display :inline-block ;
     position :relative ;
-
-
 }
+
 .order-list img{
-    padding : 5px 10px 2px 5px ;
-    
-    
+    padding : 5px 10px 2px 5px ;    
 }
 
 .contact-wrapper: {
     position :relative ;
-    }
+}
 
 .add-to-order{
     font-size :15px ;
@@ -100,7 +114,7 @@ h1{
     /* Position the tooltip */
     position: absolute ;
     left :-10px ; 
-    z-index: 1; 
+  //  z-index: 5; 
 }
 
 .add-to-order img{
@@ -114,7 +128,7 @@ h1{
     /* Position the tooltip */
     position: relative ;
     left :-10px ; 
-    z-index: 1; 
+ //   z-index: 1; 
 }
 
 .menu-icon:hover .add-to-order{
@@ -135,7 +149,7 @@ h1{
     /* Position the tooltip */
     position: absolute ;
     left :0px ; 
-    z-index: 1;
+  //  z-index: 1;
  }
 
 .logo-wrapper:hover .rbs-details{
@@ -143,7 +157,7 @@ h1{
     transition : 0.5s ;
     color : #ca0202 ;
     visibility: visible;
-    }
+}
 
 
 .rbs-details {
@@ -158,12 +172,12 @@ h1{
     position: absolute ;
     top: 38px ;
     right : 0px ; 
-    z-index: 5;
-    } 
+
+} 
 
 .email-wrapper{
     display :flex ;
-    }
+}
 
 .email-wrapper img{
     position : relative ;
@@ -175,12 +189,13 @@ h1{
 
 
 .gallery {
-    Position :relative ;
+    position :relative ;
+    top : 48px;
     heigh: 100vh ;
     box-sizing: border-box ;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
+    grid-gap: 2px;
 }
 
 

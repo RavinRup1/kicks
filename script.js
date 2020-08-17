@@ -7,28 +7,6 @@ navBar.addEventListener("click",check,false);
 gallery.addEventListener("click",check,false);
 
 
-window.onload = function() {
-  // find the element that you want to drag.
-  var box = document.getElementById('order-list');
-   /* listen to the touchmove event,
-  every time it fires, grab the location
-  of touch and assign it to box */
-   box.addEventListener('touchmove', function(e) {
-    // grab the location of touch
-    var touchLocation = e.targetTouches[0];
-    // assign box new coordinates based on the touch.
-    box.style.left = touchLocation.pageX + 'px';
-    box.style.top = touchLocation.pageY + 'px';
-  })
-  /* record the position of the touch
-  when released using touchend event.
-  This will be the drop position. */
-  box.addEventListener('touchend', function(e) {
-    // current box position.
-    var x = parseInt(box.style.left);
-    var y = parseInt(box.style.top);
-  })
-}
 
 
 
@@ -109,16 +87,21 @@ function createOrderList(e) {
  //  document.getElementById("order-list").style.height = "100px" ;
 
    let refresh = document.createElement("img");
+//   let refreshText = document.createElement("div");
+
    refresh.src = "images/refresh.png";
  //   image.style.visibility = "visible" ;    
    refresh.style.width  = "10px" ;  
    refresh.style.height  = "10px" ;              
    refresh.className = "refresh-image" ;
-   
+ //  refreshText.className = "refresh-text" ;
+//   refreshText.innerText = "click to refresh" ;
   
   
    document.getElementById("order-list").innerText = "  "+k+" items  ";
    document.getElementById("order-list").appendChild(refresh); 
+//   document.getElementById("menu-wrapper").appendChild(refreshText);
+
    console.log(document.getElementById('order-list'));
 
   for ( let j = 0; j < k; j++ ){
@@ -193,6 +176,37 @@ function add(e){
 
 
 }
+
+
+
+
+window.onload = function() {
+  // find the element that you want to drag.
+  let box = document.getElementById('order-list');
+   /* listen to the touchmove event,
+  every time it fires, grab the location
+  of touch and assign it to box */
+   box.addEventListener('touchmove', function(e) {
+    // grab the location of touch
+     let touchLocation = e.targetTouches[0];
+    // assign box new coordinates based on the touch.
+    box.style.left = touchLocation.pageX + 'px';
+  //  box.style.top = touchLocation.pageY + 'px';
+   });
+  /* record the position of the touch
+  when released using touchend event.
+  This will be the drop position. */
+  box.addEventListener('touchend', function(e) {
+    // current box position.
+    let x = parseInt(box.style.left);
+ //   let y = parseInt(box.style.top);
+  });
+}
+
+
+
+
+
 
 
 
